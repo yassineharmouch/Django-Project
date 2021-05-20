@@ -1,0 +1,142 @@
+{% extends 'layout/app.html' %}
+
+{% load static %}
+
+{% block body %}
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">CRUD</a>
+                </li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Crud Add
+                </div>
+                <div class="card-body">
+                  <form class="form-horizontal" action="create5" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        Les information du pére
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="firstname1" placeholder="First Name1" id="inputFirst1" required>
+                                    <label for="inputFirst1">First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="lastname1" placeholder="Last Name1" id="inputLast1" required>
+                                    <label for="inputLast1">Last Name</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="etat1" placeholder="Etat1" id="inputetat1" required>
+                                    <label for="inputetat1">Etat</label>
+                                </div>
+                            </div>
+                           <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="sante1" placeholder="Sante1" id="inputsante1" required>
+                                    <label for="inputsante1">Sante</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="profession1" placeholder="Profession1" id="inputprofession1" required>
+                                    <label for="inputprofession1">Profession</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="revenu1" placeholder="Revenu1" id="inputrevenu1" required>
+                                    <label for="inputrevenu1">Revenu</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                          Les information du Mére
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="firstname2" placeholder="First Name2" id="inputFirst2" required>
+                                    <label for="inputFirst2">First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="lastname2" placeholder="Last Name2" id="inputLast2" required>
+                                    <label for="inputLast2">Last Name</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="etat2" placeholder="Etat2" id="inputetat2" required>
+                                    <label for="inputetat2">Etat</label>
+                                </div>
+                            </div>
+                           <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="sante2" placeholder="Sante2" id="inputsante2" required>
+                                    <label for="inputsante2">Sante</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="profession2" placeholder="Profession2" id="inputprofession2" required>
+                                    <label for="inputprofession2">Profession</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="revenu2" placeholder="Revenu2" id="inputrevenu2" required>
+                                    <label for="inputrevenu2">Revenu</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Submit &nbsp;&nbsp;&nbsp;<span></span></button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript">
+        $("#id_username").attr("placeholder", "Enter Username");
+        $("#id_password").attr("placeholder", "Enter Password");
+    </script>
+{% endblock %}

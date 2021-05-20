@@ -1,0 +1,84 @@
+{% extends 'layout/app.html' %}
+
+{% load static %}
+
+{% block body %}
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">CRUD</a>
+                </li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Crud Add
+                </div>
+                <div class="card-body">
+                  <form class="form-horizontal" action="create4" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="firstname" placeholder="First Name" id="inputFirst" required>
+                                    <label for="inputFirst">First Name</label>
+                                </div>
+                            </div>
+                             <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input class="form-control" type="date" name="date" value="2019-08-19" id="dateInput">
+                                    <label for="dateInput">date</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="etat" placeholder="Etat" id="inputetat" required>
+                                    <label for="inputetat">Etat</label>
+                                </div>
+                            </div>
+                           <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="sante" placeholder="Sante" id="inputsante" required>
+                                    <label for="inputsante">Sante</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="profession" placeholder="Profession" id="inputprofession" required>
+                                    <label for="inputprofession">Profession</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="revenu" placeholder="Revenu" id="inputrevenu" required>
+                                    <label for="inputrevenu">Revenu</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Submit &nbsp;&nbsp;&nbsp;<span></span></button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript">
+        $("#id_username").attr("placeholder", "Enter Username");
+        $("#id_password").attr("placeholder", "Enter Password");
+    </script>
+{% endblock %}

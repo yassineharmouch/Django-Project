@@ -1,0 +1,81 @@
+{% extends 'layout/app.html' %}
+
+{% load static %}
+
+{% block body %}
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">CRUD</a>
+                </li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Crud Add
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" action="update1/{{ peres.id }}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" value="{{ peres.firstname }}" name="firstname" placeholder="First Name" id="inputFirst" required>
+                                    <label for="inputFirst">First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" value="{{ peres.lastname }}" name="lastname" placeholder="Last Name" id="inputLast" required>
+                                    <label for="inputLast">Last Name</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" value="{{ peres.etat }}" name="etat" placeholder="etat" id="inputetat" required>
+                                    <label for="inputetat">Etat</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input class="form-control" type="tel" value="{{ peres.sante }}" name="sante" placeholder="Sante" id="inputsante">
+                                    <label for="inputsante">sante</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                          <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input class="form-control" type="tel" value="{{ peres.profession }}" name="profession" placeholder="profession" id="inputprofession">
+                                    <label for="inputprofession">profession</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input class="form-control" type="tel" value="{{ peres.revenu }}" name="revenu" placeholder="revenu" id="inputrevenu">
+                                    <label for="inputrevenu">revenu</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Submit &nbsp;&nbsp;&nbsp;<span></span></button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+
+{% endblock %}

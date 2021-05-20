@@ -1,0 +1,72 @@
+{% extends 'layout/app.html' %}
+
+{% load static %}
+
+{% block body %}
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">CRUD</li>
+            </ol>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    CRUD List
+                    <a  class="btn btn-sm btn-success" href="{% url 'create4' %}" style="padding: 8px; float: right; background-color: green; color: white;">ADD</a>
+                </div>
+                <div class="card-body">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Date</th>
+                                <th>Etat</th>
+                                <th>Sante</th>
+                                <th>Profession</th>
+                                <th>revenu</th>
+                                <th>Created At</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for enfant in enfants %}
+                                <tr>
+                                    <td>{{ enfant.firstname }}</td>
+                                    <td>{{ enfant.date }}</td>
+                                    <td>{{ enfant.etat }}</td>
+                                    <td>{{ enfant.sante }}</td>
+                                    <td>{{ enfant.profession }}</td>
+                                    <td>{{ enfant.revenu }}</td>
+
+                                    <td>{{ enfant.created_at  |date:"d-m-Y H:i:s" }}</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-warning" href="edit4/{{ enfant.id }}"> <span class="fa fa-edit"></span> Edit</a>
+                                        <a class="btn btn-sm btn-danger" href="delete4/{{ enfant.id }}"><span class="fa fa-trash"></span> Delete</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript">
+        $("#id_username").attr("placeholder", "Enter Username");
+        $("#id_password").attr("placeholder", "Enter Password");
+    </script>
+{% endblock %}
